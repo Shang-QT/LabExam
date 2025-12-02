@@ -4,6 +4,7 @@ class Book:
         self.author = author
         self.year = year
         self.available = True
+        
     # This function allows a user to borrow a book
     def borrow_book(self):
         if self.available:
@@ -11,6 +12,7 @@ class Book:
             print(f"'{self.title}' has been borrowed.")
         else:
             print(f"'{self.title}' is currently unavailable.")
+            
     # This function allows a user to return a book
     def return_book(self):
         if not self.available:
@@ -21,6 +23,7 @@ class Book:
     # This function checks if the book is available
     def is_available(self):
         return self.available
+    
     # This function displays book information
     def display_info(self):
         status = "Available" if self.available else "Borrowed"
@@ -33,10 +36,12 @@ class Book:
 class Library:
     def __init__(self):
         self.books = []
+        
     # This function adds a new book to the library
     def add_book(self, title, author, year):
         new_book = Book(title, author, year)
         self.books.append(new_book)
+        
     # This function lists all books in the library
     def list_books(self):
         if not self.books:
@@ -44,6 +49,7 @@ class Library:
             return
         for book in self.books:
             book.display_info()
+            
     # This function finds a book by title
     def find_book(self, title):
         for book in self.books:
